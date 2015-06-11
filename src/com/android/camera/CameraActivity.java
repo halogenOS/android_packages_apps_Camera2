@@ -1346,7 +1346,8 @@ public class CameraActivity extends QuickActivity
 
     private void removeItemAt(int index) {
         mDataAdapter.removeAt(index);
-        if (mDataAdapter.getTotalNumber() > 0) {
+        final int placeholders = mSecureCamera ? 1 : 0;
+        if (mDataAdapter.getTotalNumber() > placeholders) {
             showUndoDeletionBar();
         } else {
             // If camera preview is the only view left in filmstrip,
